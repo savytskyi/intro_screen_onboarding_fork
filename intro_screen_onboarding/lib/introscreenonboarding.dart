@@ -38,7 +38,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Container(
-          color: widget.backgroudColor ?? Theme.of(context).backgroundColor,
+          color: widget.backgroudColor ?? Theme.of(context).colorScheme.background,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 40.0),
             child: Column(
@@ -169,7 +169,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           child: CircleProgressBar(
             backgroundColor: Colors.white,
             foregroundColor:
-                widget.foregroundColor ?? Theme.of(context).primaryColor,
+                widget.foregroundColor ?? Theme.of(context).colorScheme.primary,
             value: ((_currentPage + 1) * 1.0 / widget.introductionList!.length),
           ),
         ),
@@ -178,7 +178,7 @@ class _IntroScreenOnboardingState extends State<IntroScreenOnboarding> {
           width: 55,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: (widget.foregroundColor ?? Theme.of(context).primaryColor)
+            color: (widget.foregroundColor ?? Theme.of(context).colorScheme.primary)
                 .withOpacity(0.5),
           ),
           child: IconButton(
